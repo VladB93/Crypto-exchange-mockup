@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/VladB93/Crypto-exchange-mockup/precache-manifest.2fccf1359458aa6d33d04879e28e41f9.js"
+  "../precache-manifest.2205bad8a557b268ff6b904f48c094cf.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/VladB93/Crypto-exchange-mockup/index.html", {
+workbox.routing.registerNavigationRoute("../index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });

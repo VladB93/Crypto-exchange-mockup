@@ -1,13 +1,13 @@
 {
-  "main.css": "/VladB93/Crypto-exchange-mockup/static/css/main.879dd190.chunk.css",
-  "main.js": "/VladB93/Crypto-exchange-mockup/static/js/main.1a869a0d.chunk.js",
-  "main.js.map": "/VladB93/Crypto-exchange-mockup/static/js/main.1a869a0d.chunk.js.map",
-  "static/js/1.4067d5b3.chunk.js": "/VladB93/Crypto-exchange-mockup/static/js/1.4067d5b3.chunk.js",
-  "static/js/1.4067d5b3.chunk.js.map": "/VladB93/Crypto-exchange-mockup/static/js/1.4067d5b3.chunk.js.map",
-  "runtime~main.js": "/VladB93/Crypto-exchange-mockup/static/js/runtime~main.8eebf603.js",
-  "runtime~main.js.map": "/VladB93/Crypto-exchange-mockup/static/js/runtime~main.8eebf603.js.map",
-  "static/css/main.879dd190.chunk.css.map": "/VladB93/Crypto-exchange-mockup/static/css/main.879dd190.chunk.css.map",
-  "index.html": "/VladB93/Crypto-exchange-mockup/index.html",
-  "precache-manifest.2fccf1359458aa6d33d04879e28e41f9.js": "/VladB93/Crypto-exchange-mockup/precache-manifest.2fccf1359458aa6d33d04879e28e41f9.js",
-  "service-worker.js": "/VladB93/Crypto-exchange-mockup/service-worker.js"
+  "main.css": "../static/css/main.879dd190.chunk.css",
+  "main.js": "../static/js/main.10f61d1a.chunk.js",
+  "main.js.map": "../static/js/main.10f61d1a.chunk.js.map",
+  "static/js/1.4067d5b3.chunk.js": "../static/js/1.4067d5b3.chunk.js",
+  "static/js/1.4067d5b3.chunk.js.map": "../static/js/1.4067d5b3.chunk.js.map",
+  "runtime~main.js": "../static/js/runtime~main.2ada82d0.js",
+  "runtime~main.js.map": "../static/js/runtime~main.2ada82d0.js.map",
+  "static/css/main.879dd190.chunk.css.map": "../static/css/main.879dd190.chunk.css.map",
+  "index.html": "../index.html",
+  "precache-manifest.2205bad8a557b268ff6b904f48c094cf.js": "../precache-manifest.2205bad8a557b268ff6b904f48c094cf.js",
+  "service-worker.js": "../service-worker.js"
 }
