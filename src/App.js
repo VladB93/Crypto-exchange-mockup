@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import KrakenSocket from './api';
+import KrakenSocket from './api/websocket_kraken_api';
 import PriceTable from './price-table';
 import { store } from './index.js';
+import { registerUser, singInUsingGoogle, addToCollection } from './api/firebase_api';
 
 class App extends Component {
   constructor(props) {
@@ -11,25 +12,26 @@ class App extends Component {
       input: '',
     }
     this.addPair = this.addPair.bind(this);
+    this.inputChange = this.inputChange.bind(this);
   }
-
 
   addPair() {
     this.socket.subscribe(this.state.input);
   }
 
-  inputChange(value) {
+  inputChange(event) {
     this.setState({
-      input: value
+      input: event.target.value
     });
   }
 
   render() {
     return (
       <div className="App">
+        <button onClick={()=>addToCollection()}>Register User</button>
         <PriceTable />
         Pair name
-        <input onChange={(e) => this.inputChange(e.target.value)} />
+        <input onChange={this.inputChange} />
         <button onClick={this.addPair}>Add Pair</button>
       </div>
     );

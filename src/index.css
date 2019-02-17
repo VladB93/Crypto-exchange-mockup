@@ -13,3 +13,15 @@ table {
 .red {
   color:red;
 }
+
+.right {
+  float:right;
+}
+
+td {
+  padding:5px;
+}
+
+.title {
+  text-align:center;
+}

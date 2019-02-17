@@ -1,4 +1,4 @@
-import { pairs } from './consts';
+import { pairs } from '../consts';
 
 export default class KrakenSocket {
     constructor(prop) {
@@ -14,7 +14,6 @@ export default class KrakenSocket {
             }))
         }
         this.socket.onmessage = this.handleMessage.bind(this);
-        this.channels = [];
     }
 
     handleMessage(msg) {
@@ -22,37 +21,33 @@ export default class KrakenSocket {
     }
 
     handleEvents(response) {
-        let change = false;
         switch (response.event) {
             case 'heartbeat':
                 break;
             case 'subscriptionStatus':
-                this.channels.push({
-                    channelID: response.channelID,
-                    pair: response.pair,
-                    ask: '',
-                    bid: '',
+                this.store.dispatch({
+                    type: 'CREATE_PAIR',
+                    payload: {
+                        channelID: response.channelID,
+                        pair: response.pair,
+                        bid: [],
+                        ask: [],
+                    }
                 });
-                change = true;
                 break;
             case undefined:
-                let channel = this.channels.find(el => el.channelID === response[0] && el.bid !== response[1][0] && el.ask !== response[1][1]);
-                if (channel) {
-                    change = true;
-                    channel['bid'] = response[1][0];
-                    channel['ask'] = response[1][1];
-                }
+                this.store.dispatch({
+                    type: 'UPDATE_PAIR',
+                    payload: {
+                        channelID: response[0],
+                        bid: response[1][0],
+                        ask: response[1][1]
+                    }
+                });
                 break;
             default:
                 break;
         }
-        if (change) {
-            this.store.dispatch({
-                type: 'UPDATE',
-                payload: this.channels
-            });
-        }
-
     }
 
     subscribe(pair) {
@@ -62,10 +57,7 @@ export default class KrakenSocket {
             "subscription": {
                 "name": "spread",
             }
-        }))
-
+        }));
     }
 
 }
-
-
